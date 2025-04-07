@@ -1,8 +1,9 @@
-package com.accenture.cardsignerplayground.nfc
+package com.playground.cardsignerplayground.nfc
 
 import android.nfc.Tag
 import android.util.Log
 import es.gob.jmulticard.jse.provider.DnieProvider
+import kotlinx.coroutines.delay
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import java.security.KeyStore
 import java.security.KeyStore.PrivateKeyEntry
@@ -11,8 +12,8 @@ import java.security.Security
 import java.security.Signature
 
 private const val KEYSTORE_TYPE_DNI = "DNI"
-private val CERT_ALIAS_AUTH: String = "CertAutenticacion"
-private val TAG: String = "NfcScanningManager"
+private const val CERT_ALIAS_AUTH: String = "CertAutenticacion"
+private const val TAG: String = "NfcScanningManager"
 
 class NfcScanningManager(
     private val can: String,
@@ -29,7 +30,7 @@ class NfcScanningManager(
         }
     }
 
-    fun onTagRead(tag: Tag) {
+    suspend fun onTagRead(tag: Tag) {
         val provider = createProvider(tag)
 
         val builder: KeyStore.Builder = KeyStore.Builder.newInstance(

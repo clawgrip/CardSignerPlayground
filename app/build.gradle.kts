@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.accenture.cardsignerplayground"
+    namespace = "com.playground.cardsignerplayground"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.accenture.cardsignerplayground"
+        applicationId = "com.playground.cardsignerplayground"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

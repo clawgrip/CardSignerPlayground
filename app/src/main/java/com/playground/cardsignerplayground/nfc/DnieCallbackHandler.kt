@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.nfc
+package com.playground.cardsignerplayground.nfc
 
 import android.util.Log
 import es.gob.jmulticard.callback.CustomTextInputCallback

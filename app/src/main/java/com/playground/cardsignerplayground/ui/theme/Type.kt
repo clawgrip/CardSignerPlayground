@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.ui.theme
+package com.playground.cardsignerplayground.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

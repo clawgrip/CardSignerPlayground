@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.pages.common
+package com.playground.cardsignerplayground.pages.common
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
@@ -11,6 +11,7 @@ data class ManagedTextFieldState(
     val value: String = "",
     val onValueChange: ((String) -> Unit),
     val error: ManagedTextFieldError? = null,
+    val showError: Boolean = false,
 ) {
     companion object {
         fun preview(label: String) = ManagedTextFieldState(
@@ -29,7 +30,9 @@ sealed class ManagedTextFieldError {
 
 @Composable
 fun ManagedTextField(state: ManagedTextFieldState) {
-    val error = state.error
+    val error = if (state.showError)
+        state.error
+    else null
 
     TextField(
         value = state.value,

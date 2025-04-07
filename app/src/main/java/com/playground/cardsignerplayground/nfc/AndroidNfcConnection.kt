@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.nfc
+package com.playground.cardsignerplayground.nfc
 
 import android.nfc.Tag
 import android.nfc.tech.IsoDep
@@ -148,8 +148,5 @@ class AndroidNfcConnection(tag: Tag?) : AbstractApduConnectionIso7816() {
         private val TAG: String = AndroidNfcConnection::class.java.name
 
         private const val ISODEP_TIMEOUT = 3000
-
-        /** *Version Code* de Android P.  */
-        private const val ANDROID_P = 28
     }
 }

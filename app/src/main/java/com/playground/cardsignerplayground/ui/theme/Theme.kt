@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.ui.theme
+package com.playground.cardsignerplayground.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

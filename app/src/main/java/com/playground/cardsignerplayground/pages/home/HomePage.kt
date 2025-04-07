@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.pages.home
+package com.playground.cardsignerplayground.pages.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -13,18 +13,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.accenture.cardsignerplayground.pages.common.LaunchedEffectViewModelUIEvent
-import com.accenture.cardsignerplayground.pages.common.ManagedButton
-import com.accenture.cardsignerplayground.pages.common.ManagedTextField
-import com.accenture.cardsignerplayground.pages.common.VMStandardEffects
-import com.accenture.cardsignerplayground.pages.common.swallowClicks
-import com.accenture.cardsignerplayground.ui.theme.MyAppTheme
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.playground.cardsignerplayground.pages.common.LaunchedEffectViewModelUIEvent
+import com.playground.cardsignerplayground.pages.common.ManagedButton
+import com.playground.cardsignerplayground.pages.common.ManagedTextField
+import com.playground.cardsignerplayground.pages.common.VMStandardEffects
+import com.playground.cardsignerplayground.pages.common.swallowClicks
+import com.playground.cardsignerplayground.ui.theme.MyAppTheme
 
 @Composable
 fun HomePage(vm: HomeVM) {
@@ -35,6 +37,8 @@ fun HomePage(vm: HomeVM) {
             HomeEvent.NONE -> Unit
         }
     }
+
+    val ui by vm.uiState.collectAsStateWithLifecycle()
 
     Box {
         Scaffold(
@@ -52,13 +56,13 @@ fun HomePage(vm: HomeVM) {
                 ),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                ManagedTextField(vm.ui.can)
-                ManagedTextField(vm.ui.pin)
-                ManagedButton(vm.ui.scanButton)
+                ManagedTextField(ui.can)
+                ManagedTextField(ui.pin)
+                ManagedButton(ui.scanButton)
             }
         }
 
-        val infoCardText = vm.ui.infoCardText
+        val infoCardText = ui.infoCardText
         if (infoCardText != null) {
             Column(
                 Modifier

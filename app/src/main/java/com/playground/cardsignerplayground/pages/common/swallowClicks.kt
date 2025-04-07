@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.pages.common
+package com.playground.cardsignerplayground.pages.common
 
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.Modifier

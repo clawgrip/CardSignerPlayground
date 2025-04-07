@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground
+package com.playground.cardsignerplayground
 
 import org.junit.Test
 

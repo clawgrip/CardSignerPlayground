@@ -1,4 +1,4 @@
-package com.accenture.cardsignerplayground.pages.common
+package com.playground.cardsignerplayground.pages.common
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.Lifecycle
